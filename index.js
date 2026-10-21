@@ -5,7 +5,7 @@ function withBuiltIn(users) {
         const email = users[i].email;
         withBuiltIn[i] = email.toLowerCase();
     }
-    console.log(withBuiltIn);
+    return withBuiltIn;
 }
 
 // Mengubah email menjadi lowercase tanpa built-in method
@@ -28,7 +28,7 @@ function withoutBuiltIn(users) {
         }
         withoutBuiltIn[i] = result;
     }
-    console.log(withoutBuiltIn);
+    return withoutBuiltIn;
 }
 
 // Handling fetch then-catch
@@ -38,10 +38,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
     })
     .then(function (users) {
         console.log("Handling fetch then-catch dengan built-in method:");
-        withBuiltIn(users);
+        console.log(withBuiltIn(users));
         console.log("");
         console.log("Handling fetch then-catch tanpa built-in method:");
-        withoutBuiltIn(users);
+        console.log(withoutBuiltIn(users));
         console.log("");
     })
     .catch(function (error) {
@@ -58,10 +58,10 @@ async function fetchUsers() {
         const users = await response.json();
 
         console.log("Handling fetch async-await dengan built-in method:");
-        withBuiltIn(users);
+        console.log(withBuiltIn(users));
         console.log("");
         console.log("Handling fetch async-await tanpa built-in method:");
-        withoutBuiltIn(users);
+        console.log(withoutBuiltIn(users));
     } catch (error) {
         console.error("Gagal fetch data:", error);
     }
