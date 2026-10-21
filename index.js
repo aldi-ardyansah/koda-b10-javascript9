@@ -1,0 +1,103 @@
+// Handling fetch then-catch
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (users) {
+        const withBuiltIn = [];
+        const withoutBuiltIn = [];
+
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercase = "abcdefghijklmnopqrstuvwxyz";
+
+        for (let i = 0; i < users.length; i++) {
+            const email = users[i].email;
+
+            // Mengubah email menjadi lowercase dengan built-in method
+            withBuiltIn[i] = email.toLowerCase();
+
+            // Mengubah email menjadi lowercase tanpa built-in method
+            let result = "";
+
+            for (let j = 0; j < email.length; j++) {
+                let resultChar = email[j];
+
+                for (let k = 0; k < uppercase.length; k++) {
+                    if (email[j] === uppercase[k]) {
+                        resultChar = lowercase[k];
+                    }
+                }
+
+                result += resultChar;
+            }
+
+            withoutBuiltIn[i] = result;
+        }
+
+        console.log("Handling fetch then-catch dengan built-in method:");
+        console.log(withBuiltIn);
+
+        console.log("");
+
+        console.log("Handling fetch then-catch tanpa built-in method:");
+        console.log(withoutBuiltIn);
+
+        console.log("");
+    })
+    .catch(function (error) {
+        console.error("Gagal fetch data:", error);
+    });
+
+// Handling fetch async-await
+async function getUsers() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+        );
+
+        const users = await response.json();
+
+        const withBuiltIn = [];
+        const withoutBuiltIn = [];
+
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercase = "abcdefghijklmnopqrstuvwxyz";
+
+        for (let i = 0; i < users.length; i++) {
+            const email = users[i].email;
+
+            // Mengubah email menjadi lowercase dengan built-in method
+            withBuiltIn[i] = email.toLowerCase();
+
+            // Mengubah email menjadi lowercase tanpa built-in method
+            let result = "";
+
+            for (let j = 0; j < email.length; j++) {
+                let resultChar = email[j];
+
+                for (let k = 0; k < uppercase.length; k++) {
+                    if (email[j] === uppercase[k]) {
+                        resultChar = lowercase[k];
+                    }
+                }
+
+                result += resultChar;
+            }
+
+            withoutBuiltIn[i] = result;
+        }
+
+        console.log("Handling fetch async-await dengan built-in method:");
+        console.log(withBuiltIn);
+
+        console.log("");
+
+        console.log("Handling fetch async-await tanpa built-in method:");
+        console.log(withoutBuiltIn);
+
+    } catch (error) {
+        console.error("Gagal fetch data:", error);
+    }
+}
+
+getUsers();
