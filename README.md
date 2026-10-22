@@ -1,6 +1,6 @@
 # JavaScript 9
 
-## Mengubah email menjadi lowercase dengan built-in method
+## Mengubah Email Menjadi Lowercase dengan Built-in Method
 
 ### Kode
 ```javascript
@@ -14,7 +14,7 @@ function withBuiltIn(users) {
 }
 ```
 
-## Mengubah email menjadi lowercase tanpa built-in method
+## Mengubah Email Menjadi Lowercase Tanpa Built-in Method
 
 ### Kode
 ```javascript

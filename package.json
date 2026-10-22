@@ -1,0 +1,32 @@
+{
+  "name": "koda-b10-javascript9",
+  "version": "1.0.0",
+  "description": "Program Mengubah Email Menjadi Lowercase dengan Built-in Method dan Tanpa Built-in Method.",
+  "keywords": [
+    "cli"
+  ],
+  "homepage": "https://github.com/aldi-ardyansah/koda-b10-javascript9#readme",
+  "bugs": {
+    "url": "https://github.com/aldi-ardyansah/koda-b10-javascript9/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldi-ardyansah/koda-b10-javascript9.git"
+  },
+  "license": "MIT",
+  "author": "aldi-ardyansah",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "lint": "eslint *.js *.cjs *.mjs **/*.js **/*.cjs **/*.mjs",
+    "lint:fix": "eslint *.js *.cjs *.mjs **/*.js **/*.cjs **/*.mjs --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0"
+  }
+}
